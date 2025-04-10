@@ -1,0 +1,31 @@
+package cuenta;
+
+import java.util.Scanner;
+
+public class MainOtro {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            String nombre;
+            String apellido;
+            String universidad;
+            int edad;
+
+            System.out.print("Ingrese el nombre: ");
+            nombre = sc.next();
+
+            System.out.print("Ingrese el apellido: ");
+            apellido = sc.next();
+
+            System.out.print("Ingrese la edad: ");
+            edad = sc.nextInt();
+
+            System.out.print("Ingrese la universidad: ");
+            universidad = sc.next();
+
+            System.out.println("El nombre es: "+nombre);
+            System.out.println("El apellido es: "+apellido);
+            System.out.println("La edad es: "+edad);
+            System.out.println("La universidad es: "+universidad);
+
+        }
+    }
