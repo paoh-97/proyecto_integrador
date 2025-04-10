@@ -1,0 +1,33 @@
+package cuenta;
+
+import javax.swing.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+public class MainCuenta {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String nombre, edadString;
+        int edad = 0;
+        double salario;
+
+        System.out.print("Imgrese el nombre: ");
+        nombre = sc.next();
+
+        System.out.print("Ingrese la edad: ");
+        try {
+            edadString = br.readLine();
+            edad = Integer.parseInt(edadString);
+        } catch (Exception e) {
+            System.out.println("Error");
+        }
+
+        salario = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el salario: "));
+
+        System.out.println("La edad es: " + edad);
+        JOptionPane.showMessageDialog(null, "El nombre es " + nombre + "\nEl salario es " + salario);
+    }
+}
