@@ -1,0 +1,44 @@
+package cuenta;
+
+import javax.swing.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class MainVentana {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        String nombre, apellido, universidad, edadString;
+        int edad = 0;
+
+        // Usamos Scanner para leer el nombre y apellido
+        System.out.print("Ingrese el nombre: ");
+        nombre = sc.next();
+
+        System.out.print("Ingrese el apellido: ");
+        apellido = sc.next();
+
+        // Usamos BufferedReader para leer la edad
+        System.out.print("Ingrese la edad: ");
+        try {
+            edadString = br.readLine();
+            edad = Integer.parseInt(edadString); // No validamos si es positivo
+        } catch (IOException e) {
+            System.out.println("Error al leer la edad.");
+        }
+
+        // Usamos JOptionPane para leer la universidad
+        universidad = JOptionPane.showInputDialog("Ingrese la universidad:");
+
+        // Mostramos los resultados en una ventana emergente
+        String mensaje = "El nombre es: " + nombre + "\n"
+                + "El apellido es: " + apellido + "\n"
+                + "La edad es: " + edad + "\n"
+                + "La universidad es: " + universidad;
+
+        JOptionPane.showMessageDialog(null, mensaje);
+    }
+}
