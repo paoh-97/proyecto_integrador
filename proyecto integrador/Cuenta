@@ -1,0 +1,33 @@
+package cuenta;
+
+public class Cuenta {
+    private String nombre;
+    private double saldo;
+
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+
+    public String getNombre(){
+        return nombre;
+    }
+
+    public boolean retirar(double monto){
+        if(monto > 0){
+            if(saldo >= monto){
+                saldo -= monto;
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    public boolean depositar(double monto){
+        if(monto > 0){
+            saldo += monto;
+            return true;
+        }
+        return false;
+    }
+}
